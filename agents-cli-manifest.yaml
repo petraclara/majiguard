@@ -1,6 +1,6 @@
 name: "majiguard"
 acli_version: "1.0.0"
-agent_directory: "app"
+agent_directory: "backend/app"
 region: "us-east1"
 base_template: "adk"
 generated_at: "2026-07-05T18:56:44.266344+00:00"
