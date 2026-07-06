@@ -70,7 +70,7 @@ class MajiGuardCoordinator(BaseAgent):
 
         # Step 1: Run IntakeAgent to extract details
         logger.info("Invoking IntakeAgent...")
-        await asyncio.sleep(13)
+        await asyncio.sleep(17)
         async for _ in intake_agent.run_async(ctx):
             pass
         
@@ -83,7 +83,7 @@ class MajiGuardCoordinator(BaseAgent):
 
         # Step 2: Run ClarificationAgent to check for missing info
         logger.info("Invoking ClarificationAgent...")
-        await asyncio.sleep(13)
+        await asyncio.sleep(17)
         async for _ in clarification_agent.run_async(ctx):
             pass
             
@@ -109,7 +109,7 @@ class MajiGuardCoordinator(BaseAgent):
         
         # Step 3: Run RiskPriorityAgent
         logger.info("Invoking RiskPriorityAgent...")
-        await asyncio.sleep(13)
+        await asyncio.sleep(17)
         async for _ in risk_priority_agent.run_async(ctx):
             pass
         
@@ -121,7 +121,7 @@ class MajiGuardCoordinator(BaseAgent):
 
         # Step 4: Run KnowledgeAgent
         logger.info("Invoking KnowledgeAgent...")
-        await asyncio.sleep(13)
+        await asyncio.sleep(17)
         async for _ in knowledge_agent.run_async(ctx):
             pass
         logger.info(f"Immediate Guidance: {state.get('immediate_guidance')}")
@@ -129,7 +129,7 @@ class MajiGuardCoordinator(BaseAgent):
         # Step 5: Run CaseCoordinatorAgent
         logger.info("Invoking CaseCoordinatorAgent...")
         final_text = ""
-        await asyncio.sleep(13)
+        await asyncio.sleep(17)
         async for event in case_coordinator_agent.run_async(ctx):
             if event.content and event.content.parts:
                 final_text += "".join(p.text for p in event.content.parts if p.text)
